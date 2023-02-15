@@ -13,8 +13,6 @@ def scrap_list_articles(category, page_number):
         url = f"https://www.i24news.tv/en/news/{category}"
     else:
         url = f"https://www.i24news.tv/en/news/{category}?page={page_number}"
-    page = requests.get(url)
-    soup = BeautifulSoup(page.content, "html.parser")
     html = None
     while not html:
         page = requests.get(url)
