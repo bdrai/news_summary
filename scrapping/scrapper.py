@@ -48,24 +48,23 @@ def scrap_article_content(article_url):
     return subtitle, paragraphs
 
 
-def main_scrapper(category, number_pages=1):
+def main_scrapper(category, page_number=1):
     articles = []
-    for i in range(1, number_pages + 1):
-        print(f" ############### Page n°{i} ###############")
-        articles_div = scrap_list_articles(category, i)
-        for index, article_div in enumerate(articles_div):
-            if i == 1 and index == 0:
-                article_html = article_div.find("div", class_="hide-sm").find("a", class_="article-list-horizontal")
-            else:
-                article_html = article_div.find("a", class_="article-list-horizontal")
-            article_url, article_subcategory, article_title, article_date, article_image = scrap_article_metadata(
-                article_html)
-            article_subtitle, article_paragraphs = scrap_article_content(article_url)
-            article = Article(article_url, category, article_subcategory,
-                              article_title, article_subtitle, article_date,
-                              article_image, article_paragraphs)
-            print(article_url)
-            articles.append(article)
+    print(f" ############### Page n°{page_number} ###############")
+    articles_div = scrap_list_articles(category, page_number)
+    for index, article_div in enumerate(articles_div):
+        if page_number == 1 and index == 0:
+            article_html = article_div.find("div", class_="hide-sm").find("a", class_="article-list-horizontal")
+        else:
+            article_html = article_div.find("a", class_="article-list-horizontal")
+        article_url, article_subcategory, article_title, article_date, article_image = scrap_article_metadata(
+            article_html)
+        article_subtitle, article_paragraphs = scrap_article_content(article_url)
+        article = Article(article_url, category, article_subcategory,
+                          article_title, article_subtitle, article_date,
+                          article_image, article_paragraphs)
+        print(article_url)
+        articles.append(article)
     return articles
 
 
