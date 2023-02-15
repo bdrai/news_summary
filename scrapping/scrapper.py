@@ -1,8 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
 from dateutil.parser import parse
-import time
 from article import Article
 
 CATEGORIES = ["middle-east", "israel", "international"]
@@ -66,6 +64,7 @@ def main_scrapper(category, number_pages=1):
             article = Article(article_url, category, article_subcategory,
                               article_title, article_subtitle, article_date,
                               article_image, article_paragraphs)
+            print(article_url)
             articles.append(article)
     return articles
 
