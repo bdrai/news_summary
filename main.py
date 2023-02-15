@@ -13,9 +13,9 @@ if __name__ == '__main__':
                                  database=env.DB_MYSQL, autocommit=True)
     cursor = connection.cursor()
     db.create_tables(cursor)
-    ids = db.get_all_ids(cursor)
-    N_PAGES = 50
+    N_PAGES = 10
     for category in CATEGORIES:
+        ids = db.get_all_ids(cursor)
         for page_number in range(1, N_PAGES + 1):
             articles = main_scrapper(category, page_number)
             for article in articles:
