@@ -1,40 +1,69 @@
+/* Set up basic styling for the page */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
+/* Style the article components */
 .article {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  display: block;
+  margin-bottom: 20px;
 }
+
+/* Style the wrapper for each article */
 .wrapper {
   display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  gap: 8px;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
 }
 
-.content-wrapper {
+/* Style the image in each article */
+.image-article img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+/* Style the title in each article */
+.title-article h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Style the summary in each article */
+.summary-article p {
+  font-size: 16px;
+  margin: 10px 0 0 0;
+  padding: 0;
+  color: #666;
+}
+
+/* Style the set of articles */
+.set-article {
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 8px;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
+/* Style the content in each article */
 .content-article {
-float: right;
+  margin-left: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Style the link for each article */
+.article a {
+  text-decoration: none;
+}
+
+/* Style the hover effect for each article */
+.wrapper:hover {
+  background-color: #d9d9d9;
+  cursor: pointer;
 }

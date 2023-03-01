@@ -41,9 +41,8 @@ class ContentArticle extends React.Component{
             <TitleArticle
               title="Morocco's World Cup celebrations an uneasy sight in Toto"
             />
-
             <SummaryArticle
-              summary="Iran was ousted from a United Nations women's group on Wednesday for policies contrary to the rights of women and girls, a move proposed by the United States after Tehran's crackdown on protests."
+              summary="Iran was ousted from a United Nations women's group on Wednesday for policies contrary to the rights of women and girls, a move proposed by the United States after Tehran's crackdown on protests.Iran was ousted from a United Nations women's group on Wednesday for policies contrary to the rights of women and girls, a move proposed by the United States after Tehran's crackdown on protests.Iran was ousted from a United Nations women's group on Wednesday for policies contrary to the rights of women and girls, a move proposed by the United States after Tehran's crackdown on protests."
             />
           </div>
         </div>
@@ -71,7 +70,7 @@ class Article extends React.Component{
   }
 }
 
-class SetArticle extends React.Component {
+class SetArticles extends React.Component {
   render(){
     return (
       <div className='set-article'>
@@ -83,5 +82,5 @@ class SetArticle extends React.Component {
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<SetArticle />);
+root.render(<SetArticles />);
   
