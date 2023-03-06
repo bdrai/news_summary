@@ -49,6 +49,14 @@ def get_articles_limit(limit):
     r = cursor.fetchall()
     return jsonify(r)
 
+@app.route("/get_articles_by_date/<date>", methods=["GET"])
+def get_articles_by_date(date):
+    env = Env()
+    connection = pymysql.connect(host=env.HOST_MYSQL, user=env.USER_MYSQL, password=env.PWD_MYSQL, database=env.DB_MYSQL,cursorclass=pymysql.cursors.DictCursor)
+    cursor = connection.cursor()
+    cursor.execute(f"SELECT id, url, category, image, title, subtitle FROM Article WHERE DATE(date)='{date}';")
+    r = cursor.fetchall()
+    return jsonify(r)
 
 if __name__ == '__main__':
     app.run(debug=True)

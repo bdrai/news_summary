@@ -23,8 +23,8 @@ body {
 
 /* Style the image in each article */
 .image-article img {
-  max-width: 100%;
-  border-radius: 5px;
+  max-width: 80%;
+  border-radius: 3px;
 }
 
 /* Style the title in each article */
