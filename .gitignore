@@ -1,3 +1,5 @@
+*.csv
+/cnn_dailymail
 *.zip
 **/*.csv
 **/.DS_Store
