@@ -65,6 +65,3 @@ def main_scrapper(category, page_number=1):
         articles.append(article)
     return articles
 
-
-if __name__ == '__main__':
-    main_scrapper("international", 5)

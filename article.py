@@ -13,9 +13,6 @@ class Article:
     def __str__(self):
         return f"{self.title} ({self.date})"
 
-    def save_summary_in_db(self, cursor):
-        pass
-
     def save_article_in_db(self, cursor, list_ids):
         if self.id_ in list_ids:
             return
